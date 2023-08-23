@@ -25,4 +25,13 @@ class ApiController extends Controller
             'rabbits' => $rabbits
         ]);
     }
+
+    public function rabbitShow($id) {
+
+        $rabbit = Rabbit :: findOrFail($id);
+
+        return response() -> json([
+            'rabbit' => $rabbit
+        ]);
+    }
 }
